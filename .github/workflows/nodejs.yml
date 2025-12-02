@@ -12,7 +12,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js
@@ -33,8 +32,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: |
-      contains(github.event.head_commit.added, 'report.md') ||
-      contains(github.event.head_commit.modified, 'report.md')
+          contains(join(github.event.head_commit.added, ' '), 'report.md') ||
+          contains(join(github.event.head_commit.modified, ' '), 'report.md') ||
+          contains(join(github.event.head_commit.removed, ' '), 'report.md')
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js
@@ -55,8 +55,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: |
-      contains(github.event.head_commit.added, '.github/workflows/nodejs.yml') || 
-      contains(github.event.head_commit.modified, '.github/workflows/nodejs.yml')
+          contains(join(github.event.head_commit.added, ' '), '.github/') ||
+          contains(join(github.event.head_commit.modified, ' '), '.github/') ||
+          contains(join(github.event.head_commit.removed, ' '), '.github/')
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js
