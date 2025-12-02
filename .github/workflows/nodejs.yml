@@ -28,6 +28,26 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+  ci:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
       - run: npm ci
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
       - run: npm test
+
+  testnestjs:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
       - run: npm run test:nestjs
+#      - run: npm ci
+#      - run: npm test
+#      - run: npm run test:nestjs
