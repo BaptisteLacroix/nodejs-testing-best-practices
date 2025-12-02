@@ -14,6 +14,8 @@
 
 ## Authors
 
+<!-- Test 1: Modification du README seul - ne devrait déclencher que le job build -->
+
 <img width="50" height="50" src="graphics/team/yoni.jpg"/>
 
 **Yoni Goldberg**
