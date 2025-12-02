@@ -48,6 +48,6 @@ jobs:
   #   steps:
   #     - uses: actions/checkout@v4
   #     - run: npm run test:nestjs
-      - run: npm ci
+      - run: npm i
       - run: npm test
       - run: npm run test:nestjs
