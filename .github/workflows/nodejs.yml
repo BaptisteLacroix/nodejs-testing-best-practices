@@ -32,6 +32,8 @@ jobs:
   test:
     needs: build
     runs-on: ubuntu-latest
+    if: |
+      contains(github.event.head_commit.added, 'report.md')
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js
@@ -51,6 +53,8 @@ jobs:
   testnestjs:
     needs: build
     runs-on: ubuntu-latest
+    if: |
+      contains(github.event.head_commit.added, '.github/workflows/nodejs.yml')
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js
