@@ -14,4 +14,13 @@ En comparant le hash.
 
 ## Exécution parallèle
 
+> Séparez les différents runs de tests dans différents job (n'oubliez pas de mettre une dépendance sur le job de build). Combien de temps gagne-t-on en parallélisant les tests ? Il faudrait idéalement comparer également la consommation de ressources, mais ce n'est pas évident à mettre en place sur Github Actions, on va donc s'en passer pour l'instant.
 
+Note : chaque job est exécuté dans un environnement séparé, il faut donc réinstaller toutes les fonctionnalités.
+
+
+On en perd: 1m23s
+
+## Test conditionnels
+
+> Ajoutez, pour chaque job, une condition pour le lancer (un changement dans un dossier donné par exemple) et comparez les temps d'exécution du workflow (sans rien modifier et en modifiant des fichiers des dossiers en questions)
