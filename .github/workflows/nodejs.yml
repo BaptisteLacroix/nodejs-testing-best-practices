@@ -32,9 +32,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: |
-          contains(join(github.event.head_commit.added, ' '), 'report.md') ||
-          contains(join(github.event.head_commit.modified, ' '), 'report.md') ||
-          contains(join(github.event.head_commit.removed, ' '), 'report.md')
+          contains(join(github.event.head_commit.added, ' '), 'recipes/') ||
+          contains(join(github.event.head_commit.modified, ' '), 'recipes/') ||
+          contains(join(github.event.head_commit.removed, ' '), 'recipes/')
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js
@@ -55,9 +55,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: |
-          contains(join(github.event.head_commit.added, ' '), '.github/') ||
-          contains(join(github.event.head_commit.modified, ' '), '.github/') ||
-          contains(join(github.event.head_commit.removed, ' '), '.github/')
+          contains(join(github.event.head_commit.added, ' '), 'anti-pattern/') ||
+          contains(join(github.event.head_commit.modified, ' '), 'anti-pattern/') ||
+          contains(join(github.event.head_commit.removed, ' '), 'anti-pattern/')
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js

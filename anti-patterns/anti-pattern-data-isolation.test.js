@@ -1,7 +1,7 @@
 // ❌ Anti-Pattern file: This code contains bad practices for educational purposes
 const axios = require('axios');
 const sinon = require('sinon');
-const nock = require('nock');
+const nock = require('nock'); 
 const {
   initializeWebServer,
   stopWebServer,
